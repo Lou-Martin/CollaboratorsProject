@@ -1,9 +1,13 @@
 def grammar_checker(string):
     capital = False
     punctuation = True
-
+    
+    # error_list = [] < - For future refactoring, an error list using the .join() method
+    #  to add the list to one sole error message would make the program 
+    # infinitely scalable and remove the dependancy on if/elif/else statements
+    
     positive_message = "Your grammar looks good!"
-    negative_message = "Your grammar could use some work."
+    negative_message = "Your grammar could use some work: no capitalization, missing punctuation."
     negative_punctuation = "Your grammar could use some work: missing punctuation."
     negative_capitalization = "Your grammar could use some work: missing capitalization."
     
@@ -19,24 +23,15 @@ def grammar_checker(string):
             break
 
     if capital == True and punctuation == True:
-        print(capital)
-        print(punctuation)
         return negative_message
 
     elif capital == True and punctuation == False:
-        print(capital)
-        print(punctuation)
         return negative_capitalization
     
     elif capital == False and punctuation == True:
-        print(string[-1:])
-        print(capital)
-        print(punctuation)
         return negative_punctuation
     
     elif capital == False and punctuation == False:
-        print(capital)
-        print(punctuation)
         return positive_message
     else:
         return "Something's weird - how did you get here?"
