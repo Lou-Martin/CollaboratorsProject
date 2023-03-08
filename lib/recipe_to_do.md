@@ -6,16 +6,22 @@ As a user
 So that I can keep track of my tasks
 I want to check if a text includes the string #TODO
 
+example text? what format is the text? is it a diary entry? post it note style? 
+
 ## 2. Design the Function Signature
 
 _Include the name of the function, its parameters, return value, and side effects._
 
 Function name = to_do()
 
-Parameters = takes  argument ()
+Parameters = takes one argument(string)
 
-Returns 
+append text following todo to list and then V
 
+Returns the task and a message to display if task is actionable
+
+Side effects:
+possibility poor formatting/illegibility. Takes prior knowledge of "to do tasks" depending on how good the users input is
 
 ```python
 # EXAMPLE
@@ -23,14 +29,14 @@ Returns
 def to_do():
     """checks 
 
-    Parameters: ()
-        a something (eg "")
+    Parameters: (string)
+        an amount of text (eg "#TODO take the dog for a walk")
 
     Returns: (state the return value and its type)
-        a something (eg [""])
+        an updated list (eg ["1 take the dog for a walk. 2 take out the bins. 3 paint the house"])
 
     Side effects: (state any side effects)
-        
+        illegibility depending on complexity, unknown user input
     """
     pass # Test-driving means _not_ writing any code here yet.
 ```
@@ -42,11 +48,11 @@ _Make a list of examples of what the function will take and return._
 ```python
 # EXAMPLE
 
-to_do(sometext)
-returns ""
+to_do("Hi, it's me")
+returns "This isn't an actionable task"
 
-to_do(sometext)
-returns ""
+to_do("#TODO take the dog for a walk")
+returns "take the dog for a walk is on your to do list!"
 ```
 
 _Encode each example as a test. You can add to the above list as you go._

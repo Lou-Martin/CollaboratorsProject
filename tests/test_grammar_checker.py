@@ -4,6 +4,6 @@ def test_grammar_checker():
     result = grammar_checker("Is this correct?")
     assert result == "Your grammar looks good!"
     result = grammar_checker("and now")
-    assert result == "Your grammar could use some work."
+    assert result == "Your grammar could use some work: no capitalization, missing punctuation."
     result = grammar_checker("And now")
     assert result == "Your grammar could use some work: missing punctuation."
