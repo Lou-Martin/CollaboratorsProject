@@ -81,4 +81,9 @@ def test_reading_chunk_refresh():
     new_diary.reading_chunk(29,2)
     result = new_diary.reading_chunk(5,1)
     assert result == "Ah, distinctly I remember it"
+
+def test_reading_chunk_repeat():
+    newest_diary = DiaryEntry("Small book", "This is a small amount of text")
+    result = newest_diary.reading_chunk(14,1)
+    assert result == "This is a small amount of text"
     
